@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  tasks:
+
+  - name: installing first package
+    dnf :
+      name : vim
