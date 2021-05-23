@@ -5,4 +5,18 @@
 
   - name: installing first package
     dnf :
-      name : vim
+      name : 
+        - vim
+        - vim
+        - freeradius
+        - freeradius-utils
+        - freeradius-ldap
+        - rsync
+        - net-snmp
+        - net-snmp-utils
+      state: latest
+  - name: firewall policy
+    ansible.posix.firewalld:
+      service: https
+      permanent: yes
+      state: enabled
